@@ -1,0 +1,732 @@
+# WHERE
+Use ```WHERE``` to filter the data we want.<br/><br/>
+Suppose we have the following incomplete **periodic** table:
+<table>
+  <tr>
+    <th>atomic_number</th>
+    <th>element_name</th>
+    <th>element_symbol</th>
+    <th>element_period</th>
+    <th>element_group</th>
+    <th>state_of_matter</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Hydrogen</td>
+    <td>H</td>
+    <td>1</td>
+    <td>1</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Helium</td>
+    <td>He</td>
+    <td>1</td>
+    <td>18</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Lithium</td>
+    <td>Li</td>
+    <td>2</td>
+    <td>1</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Beryllium</td>
+    <td>Be</td>
+    <td>2</td>
+    <td>2</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Boron</td>
+    <td>B</td>
+    <td>2</td>
+    <td>13</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Carbon</td>
+    <td>C</td>
+    <td>2</td>
+    <td>14</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Nitrogen</td>
+    <td>N</td>
+    <td>2</td>
+    <td>15</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Oxygen</td>
+    <td>O</td>
+    <td>2</td>
+    <td>16</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Fluorine</td>
+    <td>F</td>
+    <td>2</td>
+    <td>17</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>Neon</td>
+    <td>Ne</td>
+    <td>2</td>
+    <td>18</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>Sodium</td>
+    <td>Na</td>
+    <td>3</td>
+    <td>1</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>Magnesium</td>
+    <td>Mg</td>
+    <td>3</td>
+    <td>2</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>Aluminium</td>
+    <td>Al</td>
+    <td>3</td>
+    <td>13</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>Silicon</td>
+    <td>Si</td>
+    <td>3</td>
+    <td>14</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>Phosphorus</td>
+    <td>P</td>
+    <td>3</td>
+    <td>15</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>Sulfur</td>
+    <td>S</td>
+    <td>3</td>
+    <td>16</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>Chlorine</td>
+    <td>Cl</td>
+    <td>3</td>
+    <td>17</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>Argon</td>
+    <td>Ar</td>
+    <td>3</td>
+    <td>18</td>
+    <td>gas</td>
+  </tr>
+</table>
+
+### SELECT all solid elements from periodic table
+```sql
+SELECT
+    *
+FROM
+    periodic
+WHERE
+    state_of_matter = 'solid'
+```
+Result:
+<table>
+  <tr>
+    <th>atomic_number</th>
+    <th>element_name</th>
+    <th>element_symbol</th>
+    <th>element_period</th>
+    <th>element_group</th>
+    <th>state_of_matter</th>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Lithium</td>
+    <td>Li</td>
+    <td>2</td>
+    <td>1</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Beryllium</td>
+    <td>Be</td>
+    <td>2</td>
+    <td>2</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Boron</td>
+    <td>B</td>
+    <td>2</td>
+    <td>13</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Carbon</td>
+    <td>C</td>
+    <td>2</td>
+    <td>14</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>Sodium</td>
+    <td>Na</td>
+    <td>3</td>
+    <td>1</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>Magnesium</td>
+    <td>Mg</td>
+    <td>3</td>
+    <td>2</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>Aluminium</td>
+    <td>Al</td>
+    <td>3</td>
+    <td>13</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>Silicon</td>
+    <td>Si</td>
+    <td>3</td>
+    <td>14</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>Phosphorus</td>
+    <td>P</td>
+    <td>3</td>
+    <td>15</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>Sulfur</td>
+    <td>S</td>
+    <td>3</td>
+    <td>16</td>
+    <td>solid</td>
+  </tr>
+</table>
+
+### SELECT all solid elements of group 14 from periodic table
+```sql
+SELECT
+    *
+FROM
+    periodic
+WHERE
+    state_of_matter = 'solid'
+    AND element_group = 14
+```
+Result:
+<table>
+  <tr>
+    <th>atomic_number</th>
+    <th>element_name</th>
+    <th>element_symbol</th>
+    <th>element_period</th>
+    <th>element_group</th>
+    <th>state_of_matter</th>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Carbon</td>
+    <td>C</td>
+    <td>2</td>
+    <td>14</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>Silicon</td>
+    <td>Si</td>
+    <td>3</td>
+    <td>14</td>
+    <td>solid</td>
+  </tr>
+</table>
+
+### SELECT all solid elements higher than group 14 from periodic table
+```sql
+SELECT
+    *
+FROM
+    periodic
+WHERE
+    state_of_matter = 'solid'
+    AND element_group > 14
+```
+Result:
+<table>
+  <tr>
+    <th>atomic_number</th>
+    <th>element_name</th>
+    <th>element_symbol</th>
+    <th>element_period</th>
+    <th>element_group</th>
+    <th>state_of_matter</th>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>Phosphorus</td>
+    <td>P</td>
+    <td>3</td>
+    <td>15</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>Sulfur</td>
+    <td>S</td>
+    <td>3</td>
+    <td>16</td>
+    <td>solid</td>
+  </tr>
+</table>
+
+### SELECT everything from periodic table that is either in solid state or in group 1
+```sql
+SELECT
+    *
+FROM
+    periodic
+WHERE
+    state_of_matter = 'solid'
+    OR element_group = 1
+```
+Result:
+<table>
+  <tr>
+    <th>atomic_number</th>
+    <th>element_name</th>
+    <th>element_symbol</th>
+    <th>element_period</th>
+    <th>element_group</th>
+    <th>state_of_matter</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Hydrogen</td>
+    <td>H</td>
+    <td>1</td>
+    <td>1</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Lithium</td>
+    <td>Li</td>
+    <td>2</td>
+    <td>1</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Beryllium</td>
+    <td>Be</td>
+    <td>2</td>
+    <td>2</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Boron</td>
+    <td>B</td>
+    <td>2</td>
+    <td>13</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Carbon</td>
+    <td>C</td>
+    <td>2</td>
+    <td>14</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>Sodium</td>
+    <td>Na</td>
+    <td>3</td>
+    <td>1</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>Magnesium</td>
+    <td>Mg</td>
+    <td>3</td>
+    <td>2</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>Aluminium</td>
+    <td>Al</td>
+    <td>3</td>
+    <td>13</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>Silicon</td>
+    <td>Si</td>
+    <td>3</td>
+    <td>14</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>Phosphorus</td>
+    <td>P</td>
+    <td>3</td>
+    <td>15</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>Sulfur</td>
+    <td>S</td>
+    <td>3</td>
+    <td>16</td>
+    <td>solid</td>
+  </tr>
+</table>
+
+# IN
+Use ```IN``` to set multiple conditions on ONE column.
+### SELECT everything from periodic table that is either in group 1 or group 13
+```sql
+SELECT
+    *
+FROM
+    periodic
+WHERE
+    element_group IN (1, 13)
+```
+<table>
+  <tr>
+    <th>atomic_number</th>
+    <th>element_name</th>
+    <th>element_symbol</th>
+    <th>element_period</th>
+    <th>element_group</th>
+    <th>state_of_matter</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Hydrogen</td>
+    <td>H</td>
+    <td>1</td>
+    <td>1</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Lithium</td>
+    <td>Li</td>
+    <td>2</td>
+    <td>1</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Boron</td>
+    <td>B</td>
+    <td>2</td>
+    <td>13</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>Sodium</td>
+    <td>Na</td>
+    <td>3</td>
+    <td>1</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>Aluminium</td>
+    <td>Al</td>
+    <td>3</td>
+    <td>13</td>
+    <td>solid</td>
+  </tr>
+</table>
+
+# BETWEEN
+Use ```BETWEEN``` to make sure values of ONE column fulfilled a range you specify.
+### SELECT everything from periodic table between atomic number 5 and 10
+```sql
+SELECT
+    *
+FROM
+    periodic
+WHERE
+    atomic_number BETWEEN 5 AND 10
+```
+Result:
+<table>
+  <tr>
+    <th>atomic_number</th>
+    <th>element_name</th>
+    <th>element_symbol</th>
+    <th>element_period</th>
+    <th>element_group</th>
+    <th>state_of_matter</th>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Boron</td>
+    <td>B</td>
+    <td>2</td>
+    <td>13</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Carbon</td>
+    <td>C</td>
+    <td>2</td>
+    <td>14</td>
+    <td>solid</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Nitrogen</td>
+    <td>N</td>
+    <td>2</td>
+    <td>15</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>Oxygen</td>
+    <td>O</td>
+    <td>2</td>
+    <td>16</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>Fluorine</td>
+    <td>F</td>
+    <td>2</td>
+    <td>17</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>Neon</td>
+    <td>Ne</td>
+    <td>2</td>
+    <td>18</td>
+    <td>gas</td>
+  </tr>
+</table>
+
+# Comparison Operators
+<table>
+  <tr>
+    <th>atomic_number</th>
+    <th>element_name</th>
+    <th>element_symbol</th>
+    <th>element_period</th>
+    <th>element_group</th>
+    <th>state_of_matter</th>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Nitrogen</td>
+    <td>N</td>
+    <td>2</td>
+    <td>15</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>Sulfur</td>
+    <td>S</td>
+    <td>3</td>
+    <td>16</td>
+    <td>solid</td>
+  </tr>
+</table>
+
+Assume we want to determine if the **Nitrogen** and **Sulfur** will be selected if we set the following conditions:
+<table>
+  <tr>
+    <th>operator</th>
+    <th>description</th>
+    <th>condition</th>
+    <th>will N be selected?</th>
+    <th>will S be selected?</th>
+  </tr>
+  <tr>
+    <td>=</td>
+    <td>Equal to</td>
+    <td><b>state_of_matter = 'gas'</b></td>
+    <td>yes</td>
+    <td>no</td>
+  </tr>
+  <tr>
+    <td>!=</td>
+    <td>Not equal to</td>
+    <td><b>state_of_matter != 'gas'</b></td>
+    <td>no</td>
+    <td>yes</td>
+  </tr>
+  <tr>
+    <td><></td>
+    <td>Not equal to</td>
+    <td><b>state_of_matter <> 'gas'</b></td>
+    <td>no</td>
+    <td>yes</td>
+  </tr>
+  <tr>
+    <td>></td>
+    <td>Greater than</td>
+    <td><b>element_group > 15</b></td>
+    <td>no</td>
+    <td>yes</td>
+  </tr>
+  <tr>
+    <td>>=</td>
+    <td>Greater than or equal to</td>
+    <td><b>element_group >= 15</b></td>
+    <td>yes</td>
+    <td>yes</td>
+  </tr>
+  <tr>
+    <td><</td>
+    <td>Less than</td>
+    <td><b>element_group < 15</b></td>
+    <td>no</td>
+    <td>no</td>
+  </tr>
+  <tr>
+    <td><=</td>
+    <td>Less than or equal to</td>
+    <td><b>element_group <= 15</b></td>
+    <td>yes</td>
+    <td>no</td>
+  </tr>
+</table>
+
+# Logical Operators
+<table>
+  <tr>
+    <th>atomic_number</th>
+    <th>element_name</th>
+    <th>element_symbol</th>
+    <th>element_period</th>
+    <th>element_group</th>
+    <th>state_of_matter</th>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Nitrogen</td>
+    <td>N</td>
+    <td>2</td>
+    <td>15</td>
+    <td>gas</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>Sulfur</td>
+    <td>S</td>
+    <td>3</td>
+    <td>16</td>
+    <td>solid</td>
+  </tr>
+</table>
+
+Assume we want to determine if the **Nitrogen** and **Sulfur** will be selected if we set the following conditions:
+<table>
+  <tr>
+    <th>operator</th>
+    <th>description</th>
+    <th>condition</th>
+    <th>will N be selected?</th>
+    <th>will S be selected?</th>
+  </tr>
+  <tr>
+    <td>AND</td>
+    <td>All conditions must be satisfied</td>
+    <td>state_of_matter = 'gas' <b>AND</b> element_group >= 15</td>
+    <td>yes</td>
+    <td>no</td>
+  </tr>
+  <tr>
+    <td>OR</td>
+    <td>At least one condition is satisfied</td>
+    <td>state_of_matter = 'gas' <b>OR</b> element_group >= 15</td>
+    <td>yes</td>
+    <td>yes</td>
+  </tr>
+  <tr>
+    <td>BETWEEN</td>
+    <td>Check if column value falls between two values</td>
+    <td>element_group <b>BETWEEN</b> 10 AND 15</td>
+    <td>yes</td>
+    <td>no</td>
+  </tr>
+  <tr>
+    <td>IN</td>
+    <td>Check if column value is listed in a list of values</td>
+    <td>state_of_matter <b>IN</b> ('solid', 'liquid')</td>
+    <td>no</td>
+    <td>yes</td>
+  </tr>
+</table>
