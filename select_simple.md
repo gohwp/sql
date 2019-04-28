@@ -1,0 +1,409 @@
+# SELECT
+Suppose we have a table named **rainbow**:
+<table>
+	<tr>
+		<th>colour</th>
+		<th>order</th>
+    <th>is_primary_colour</th>
+    <th>min_wavelength_nm</th>
+    <th>max_wavelength_nm</th>
+ 	</tr>
+ 	<tr>
+  		<td>red</td>
+   		<td>1</td>
+      <td>yes</td>
+      <td>620</td>
+      <td>750</td>
+ 	</tr>
+	<tr>
+  		<td>orange</td>
+   		<td>2</td>
+      <td>no</td>
+      <td>590</td>
+      <td>620</td>
+ 	</tr>
+	<tr>
+  		<td>yellow</td>
+   		<td>3</td>
+      <td>yes</td>
+      <td>570</td>
+      <td>590</td>
+ 	</tr>
+	<tr>
+  		<td>green</td>
+   		<td>4</td>
+      <td>no</td>
+      <td>495</td>
+      <td>570</td>
+ 	</tr>
+  <tr>
+  		<td>blue</td>
+   		<td>5</td>
+      <td>yes</td>
+      <td>450</td>
+      <td>495</td>
+ 	</tr>
+  <tr>
+  		<td>indigo</td>
+   		<td>6</td>
+      <td>no</td>
+      <td>425</td>
+      <td>450</td>
+ 	</tr>
+  <tr>
+  		<td>violet</td>
+   		<td>7</td>
+      <td>no</td>
+      <td>380</td>
+      <td>425</td>
+ 	</tr>
+</table>
+
+### SELECT everything from rainbow
+```sql
+SELECT 
+    * 
+FROM 
+    rainbow
+```
+Result:
+<table>
+	<tr>
+		<th>colour</th>
+		<th>order</th>
+    <th>is_primary_colour</th>
+    <th>min_wavelength_nm</th>
+    <th>max_wavelength_nm</th>
+ 	</tr>
+ 	<tr>
+  		<td>red</td>
+   		<td>1</td>
+      <td>yes</td>
+      <td>620</td>
+      <td>750</td>
+ 	</tr>
+	<tr>
+  		<td>orange</td>
+   		<td>2</td>
+      <td>no</td>
+      <td>590</td>
+      <td>620</td>
+ 	</tr>
+	<tr>
+  		<td>yellow</td>
+   		<td>3</td>
+      <td>yes</td>
+      <td>570</td>
+      <td>590</td>
+ 	</tr>
+	<tr>
+  		<td>green</td>
+   		<td>4</td>
+      <td>no</td>
+      <td>495</td>
+      <td>570</td>
+ 	</tr>
+  <tr>
+  		<td>blue</td>
+   		<td>5</td>
+      <td>yes</td>
+      <td>450</td>
+      <td>495</td>
+ 	</tr>
+  <tr>
+  		<td>indigo</td>
+   		<td>6</td>
+      <td>no</td>
+      <td>425</td>
+      <td>450</td>
+ 	</tr>
+  <tr>
+  		<td>violet</td>
+   		<td>7</td>
+      <td>no</td>
+      <td>380</td>
+      <td>425</td>
+ 	</tr>
+</table>
+
+### SELECT one column - colour from rainbow
+```sql
+SELECT 
+    colour
+FROM 
+    rainbow
+```
+Result:
+<table>
+	<tr>
+		<th>colour</th>
+ 	</tr>
+ 	<tr>
+  		<td>red</td>
+ 	</tr>
+	<tr>
+  		<td>orange</td>
+ 	</tr>
+	<tr>
+  		<td>yellow</td>
+ 	</tr>
+	<tr>
+  		<td>green</td>
+ 	</tr>
+  <tr>
+  		<td>blue</td>
+ 	</tr>
+  <tr>
+  		<td>indigo</td>
+ 	</tr>
+  <tr>
+  		<td>violet</td>
+ 	</tr>
+</table>
+
+### SELECT two columns - colour and is_primary_colour from rainbow
+```sql
+SELECT 
+    colour
+    , is_primary_colour 
+FROM 
+    rainbow
+```
+Result:
+<table>
+	<tr>
+		<th>colour</th>
+    <th>is_primary_colour</th>
+ 	</tr>
+ 	<tr>
+  		<td>red</td>
+      <td>yes</td>
+ 	</tr>
+	<tr>
+  		<td>orange</td>
+      <td>no</td>
+ 	</tr>
+	<tr>
+  		<td>yellow</td>
+      <td>yes</td>
+ 	</tr>
+	<tr>
+  		<td>green</td>
+      <td>no</td>
+ 	</tr>
+  <tr>
+  		<td>blue</td>
+      <td>yes</td>
+ 	</tr>
+  <tr>
+  		<td>indigo</td>
+      <td>no</td>
+ 	</tr>
+  <tr>
+  		<td>violet</td>
+      <td>no</td>
+ 	</tr>
+</table>
+
+### SELECT three columns - colour, min, and max wavelength from rainbow
+```sql
+SELECT 
+    colour
+    , min_wavelength_nm
+    , max_wavelength_nm
+FROM 
+    rainbow
+```
+Result:
+<table>
+	<tr>
+		<th>colour</th>
+    <th>min_wavelength_nm</th>
+    <th>max_wavelength_nm</th>
+ 	</tr>
+ 	<tr>
+  		<td>red</td>
+      <td>620</td>
+      <td>750</td>
+ 	</tr>
+	<tr>
+  		<td>orange</td>
+      <td>590</td>
+      <td>620</td>
+ 	</tr>
+	<tr>
+  		<td>yellow</td>
+      <td>570</td>
+      <td>590</td>
+ 	</tr>
+	<tr>
+  		<td>green</td>
+      <td>495</td>
+      <td>570</td>
+ 	</tr>
+  <tr>
+  		<td>blue</td>
+      <td>450</td>
+      <td>495</td>
+ 	</tr>
+  <tr>
+  		<td>indigo</td>
+      <td>425</td>
+      <td>450</td>
+ 	</tr>
+  <tr>
+  		<td>violet</td>
+      <td>380</td>
+      <td>425</td>
+ 	</tr>
+</table>
+
+# DISTINCT
+### SELECT is_primary_colour from rainbow
+```sql
+SELECT 
+    is_primary_colour
+FROM 
+    rainbow
+```
+Result:
+<table>
+	<tr>
+    <th>is_primary_colour</th>
+ 	</tr>
+ 	<tr>
+      <td>yes</td>
+ 	</tr>
+	<tr>
+      <td>no</td>
+ 	</tr>
+	<tr>
+      <td>yes</td>
+ 	</tr>
+	<tr>
+      <td>no</td>
+ 	</tr>
+  <tr>
+      <td>yes</td>
+ 	</tr>
+  <tr>
+      <td>no</td>
+ 	</tr>
+  <tr>
+      <td>no</td>
+ 	</tr>
+</table>
+
+What was that?
+### Show me unique values!
+```sql
+SELECT DISTINCT
+    is_primary_colour
+FROM 
+    rainbow
+```
+Result:
+<table>
+	<tr>
+    <th>is_primary_colour</th>
+ 	</tr>
+ 	<tr>
+      <td>yes</td>
+ 	</tr>
+	<tr>
+      <td>no</td>
+ 	</tr>
+</table>
+
+*** ```SELECT DISTINCT``` made sure results returned are unique. No two rows are similar
+# LIMIT
+This is useful when the table you are working with contains millions of rows, but you only want to take a look at a few samples
+### SELECT colour and order from rainbow, but show only 1 row of data
+```sql 
+SELECT 
+    colour
+    , order
+FROM 
+    rainbow
+LIMIT 1
+```
+or
+```sql
+SELECT TOP 1
+    colour
+    , order
+FROM
+    rainbow
+```
+Result:
+<table>
+	<tr>
+		<th>colour</th>
+		<th>order</th>
+ 	</tr>
+ 	<tr>
+  		<td>red</td>
+   		<td>1</td>
+ 	</tr>
+</table>
+
+### SELECT everything from rainbow, but show only 5 rows of data
+```sql
+SELECT
+    *
+FROM
+    rainbow
+LIMIT 5
+```
+or
+```sql
+SELECT TOP 5
+    *
+FROM
+    rainbow
+```
+Result:
+<table>
+	<tr>
+		<th>colour</th>
+		<th>order</th>
+    <th>is_primary_colour</th>
+    <th>min_wavelength_nm</th>
+    <th>max_wavelength_nm</th>
+ 	</tr>
+ 	<tr>
+  		<td>red</td>
+   		<td>1</td>
+      <td>yes</td>
+      <td>620</td>
+      <td>750</td>
+ 	</tr>
+	<tr>
+  		<td>orange</td>
+   		<td>2</td>
+      <td>no</td>
+      <td>590</td>
+      <td>620</td>
+ 	</tr>
+	<tr>
+  		<td>yellow</td>
+   		<td>3</td>
+      <td>yes</td>
+      <td>570</td>
+      <td>590</td>
+ 	</tr>
+	<tr>
+  		<td>green</td>
+   		<td>4</td>
+      <td>no</td>
+      <td>495</td>
+      <td>570</td>
+ 	</tr>
+  <tr>
+  		<td>blue</td>
+   		<td>5</td>
+      <td>yes</td>
+      <td>450</td>
+      <td>495</td>
+ 	</tr>
+</table>
