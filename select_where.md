@@ -454,6 +454,8 @@ FROM
 WHERE
     element_group IN (1, 13)
 ```
+Result:
+
 <table>
   <tr>
     <th>atomic_number</th>
