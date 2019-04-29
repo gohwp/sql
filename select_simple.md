@@ -315,7 +315,7 @@ Result:
  	</tr>
 </table>
 
-*** ```SELECT DISTINCT``` made sure results returned are unique. No two rows are similar
+*** ```SELECT DISTINCT``` made sure results returned are unique. No two rows are the same value.
 # LIMIT
 This is useful when the table you are working with contains millions of rows, but you only want to take a look at a few samples
 ### SELECT colour and order from rainbow, but show only 1 row of data
